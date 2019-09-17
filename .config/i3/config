@@ -39,17 +39,17 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # autostart
-exec_always --no-startup-id feh --bg-scale ~/wallpapers/wallpaper.png             # wallpaper
-exec_always --no-startup-id zsh ~/.config/polybar/launch.sh                       # bar
-exec_always --no-startup-id compton --config ~/.config/compton/compton.conf -b    # compositor
-exec --no-startup-id chromium --disk-cache-dir=/tmp/cache                         # chromium
-exec --no-startup-id telegram-desktop                                             # telegram
-exec --no-startup-id code                                                         # vscode
-exec --no-startup-id flameshot                                                    # screenshot tool
+exec_always --no-startup-id feh --bg-scale ~/wallpapers/wallpaper.png               # wallpaper
+exec_always --no-startup-id zsh ~/.config/polybar/launch.sh                         # bar
+exec_always --no-startup-id compton --config ~/.config/compton/compton.conf -b      # compositor
+exec --no-startup-id chromium --disk-cache-dir=/tmp/cache                           # chromium
+exec --no-startup-id telegram-desktop                                               # telegram
+exec --no-startup-id code                                                           # vscode
+exec --no-startup-id flameshot                                                      # screenshot tool
 
 # apps' shortcuts    
-bindsym $mod+Return exec i3-sensible-terminal                                     # terminal
-bindsym $mod+d exec --no-startup-id rofi -show drun                               # rofi
+bindsym $mod+Return exec i3-sensible-terminal                                       # terminal
+bindsym $mod+d exec --no-startup-id rofi -show drun                                 # rofi
 bindsym $mod+F2 exec chromium --disk-cache-dir=/tmp/cache
 bindsym Print exec flameshot gui
 bindsym $mod+Shift+p exec ~/.config/polybar/launch.sh
