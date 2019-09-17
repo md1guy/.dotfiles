@@ -52,7 +52,7 @@ font-5 = FontAwesome5Brands:style=Regular:size=13;1
 
 modules-left = i3 title
 modules-center = mpd
-modules-right = xkeyboard pulseaudio filesystem memory cpu wlan battery date lock powermenu
+modules-right = xkeyboard pulseaudio backlight filesystem memory cpu wlan battery date lock powermenu
 
 tray-position = right
 tray-padding = 1
