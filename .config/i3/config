@@ -3,7 +3,7 @@
 ####################################################
 
 
-# Meta key as modifier
+# Super key as main modifier
 set $mod Mod4
 
 # Font for window titles.
@@ -55,7 +55,7 @@ bindsym Print exec flameshot gui
 bindsym $mod+Shift+p exec ~/.config/polybar/launch.sh
 
 # lock shortcut(alt+l)
-bindsym $Mod1+l exec ~/.config/lock/lock.sh
+bindsym Mod1+l exec ~/.config/lock/lock.sh
 
 # audio
 exec_always --no-startup-id pulseaudio --start
@@ -72,6 +72,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # switch keyboard layout
 exec_always "setxkbmap -model pc104 -layout us,ua,ru -variant ,, -option grp:caps_toggle"
 
+# screen rotating
 bindsym Control+Mod1+Left exec xrandr -o left
 bindsym Control+Mod1+Up exec xrandr -o normal
 bindsym Control+Mod1+Right exec xrandr -o right
