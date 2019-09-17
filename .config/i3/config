@@ -207,7 +207,7 @@ exec_always "setxkbmap -model pc104 -layout us,ua,ru -variant ,, -option grp:cap
 
 # locker
 # TODO:
-bindsym $mod+l exec ~/.config/lock.sh
+bindsym $mod+l exec ~/.config/lock/lock.sh
 
 # set colors
 set $bg-color            #000000
@@ -237,7 +237,7 @@ exec_always --no-startup-id zsh ~/.config/polybar/launch.sh
 bindsym $mod+Shift+p exec ~/.config/polybar/launch.sh
 
 # compositor
-exec_always --no-startup-id compton --config ~/.config/compton.conf -b
+exec_always --no-startup-id compton --config ~/.config/compton/compton.conf -b
 
 bindsym Control+Mod1+Left exec xrandr -o left
 bindsym Control+Mod1+Up exec xrandr -o normal
