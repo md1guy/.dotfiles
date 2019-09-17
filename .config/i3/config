@@ -57,6 +57,12 @@ bindsym $mod+Shift+p exec ~/.config/polybar/launch.sh
 # lock shortcut(alt+l)
 bindsym Mod1+l exec ~/.config/lock/lock.sh
 
+# brightness
+bindsym XF86MonBrightnessUp exec light -A 10
+bindsym XF86MonBrightnessDown exec light -U 10
+bindsym Shift+XF86MonBrightnessUp exec light -S 100
+bindsym Shift+XF86MonBrightnessDown exec light -S 0
+
 # audio
 exec_always --no-startup-id pulseaudio --start
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ 0; exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
