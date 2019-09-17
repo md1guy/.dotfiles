@@ -120,8 +120,9 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias c='clear'
 alias cls='echo -ne "\033c"' # clear screen for real
+alias dotfiles='/usr/bin/git --git-dir=/home/metyslav/.dotfiles/ --work-tree=/home/metyslav'
 
 # default apps
 export TERMINAL=termite
-export BROWSER=chromiumalias dotfiles='usr/bin/git --git-dir=/home/metyslav/.dotfiles/ --work-tree=/home/metyslav'
-alias dotfiles='/usr/bin/git --git-dir=/home/metyslav/.dotfiles/ --work-tree=/home/metyslav'
+export BROWSER=chromium
+
