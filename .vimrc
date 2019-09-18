@@ -37,11 +37,40 @@ if has('syntax') && has('eval')
   packadd! matchit
 endif
 
+" Display line numbers
 set number
+
+" Enable syntax highlighting
+syntax on
+
+" More intuitive split direction than default
+set splitbelow splitright
+
+" Powerline
+set rtp+=/usr/lib/python3.7/site-packages/powerline/bindings/vim
+
+" Always show the status line
+set laststatus=2
+
+" Shorter shortcuts for split navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-l>l
+
+" Bindings for Copy/Paste from/to external programs(gvim-specific feature)
+vnoremap <C-c> "*Y :let @+=@*<CR>
+map <C-p> "+P
+
+" Change cursor style accordingly to current mode
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
 
 call plug#begin('~/.vim/plugged')
 
 Plug 'dylanaraps/wal.vim'
+"Plug 'wincent/terminus'
 
 call plug#end()
 
