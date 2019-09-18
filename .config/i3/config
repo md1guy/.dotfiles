@@ -43,7 +43,7 @@ exec_always --no-startup-id feh --bg-scale ~/wallpapers/wallpaper.png           
 exec_always --no-startup-id zsh ~/.config/polybar/launch.sh                         # bar
 exec_always --no-startup-id compton --config ~/.config/compton/compton.conf -b      # compositor
 exec --no-startup-id chromium --disk-cache-dir=/tmp/cache                           # chromium
-exec --no-startup-id telegram-desktop                                               # telegram
+
 exec --no-startup-id code                                                           # vscode
 exec --no-startup-id flameshot                                                      # screenshot tool
 
@@ -200,6 +200,10 @@ for_window [class="Spotify"] move to workspace $ws-music
 assign [class="Steam"] $ws-games
 assign [class="Lutris"] $ws-games
 assign [class="battle.net.exe"] $ws-games
+
+# Cycle through active workspaces
+bindsym Mod1+j workspace prev
+bindsym Mod1+k workspace next
 
 
 ####################################################
