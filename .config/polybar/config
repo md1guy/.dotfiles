@@ -68,40 +68,7 @@ tray-background = ${colors.background}
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
 
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-#format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-#label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
-
-[module/title]
-type = internal/xwindow
-label =  %title:0:65:...%
-
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-format-mounted-prefix = " "
-format-mounted-prefix-foreground = ${colors.foreground-alt}
-label-mounted = %used%(%percentage_used%% of %total%)
-
-format-unmounted-prefix = " "
-format-unmounted-prefix-foreground = ${colors.foreground-alt}
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
 
 [settings]
 screenchange-reload = true
