@@ -56,16 +56,26 @@ set laststatus=2
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
-map <C-l> <C-l>l
+map <C-l> <C-w>l
 
 " Bindings for Copy/Paste from/to external programs(gvim-specific feature)
 vnoremap <C-c> "*Y :let @+=@*<CR>
 map <C-p> "+P
 
-" Change cursor style accordingly to current mode
+" Change cursor style accordingly to mode
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
+
+" Enable hybrid line numbers
+set rnu
+
+" Enable absolute line numbers on inactive windows
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
 
 call plug#begin('~/.vim/plugged')
 
