@@ -37,6 +37,9 @@ if has('syntax') && has('eval')
   packadd! matchit
 endif
 
+" =============================================================================
+" Start of my own stuff
+
 " Display line numbers
 set number
 
