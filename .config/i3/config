@@ -43,7 +43,7 @@ exec_always --no-startup-id feh --bg-scale ~/wallpapers/wallpaper.png           
 exec_always --no-startup-id zsh ~/.config/polybar/launch.sh                         # bar
 exec_always --no-startup-id compton --config ~/.config/compton/compton.conf -b      # compositor
 exec --no-startup-id chromium --disk-cache-dir=/tmp/cache                           # chromium
-
+exec --no-startup-id steam                                                          # steam
 exec --no-startup-id code                                                           # vscode
 exec --no-startup-id flameshot                                                      # screenshot tool
 
