@@ -45,7 +45,7 @@ export UPDATE_ZSH_DAYS=14
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="false"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -127,4 +127,4 @@ alias gdf='/usr/bin/git --git-dir=/home/metyslav/.dotfiles/ --work-tree=/home/me
 # default apps
 export TERMINAL=termite
 export BROWSER=chromium
-
+export EDITOR=vim
