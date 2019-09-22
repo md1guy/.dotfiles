@@ -1,107 +1,112 @@
 " Yes?
-set nocompatible
+    set nocompatible
 
 call plug#begin('~/.vim/plugged')
 
-  " Distraction-free mode (':Goyo')
-  Plug 'junegunn/goyo.vim'
+" Distraction-free mode (':Goyo')
+Plug 'junegunn/goyo.vim'
 
-  " Toggle line comments(highlight+'gc'; 'gcc' for current line)
-  Plug 'tomtom/tcomment_vim'
+" Toggle line comments(highlight+'gc'; 'gcc' for current line)
+Plug 'tomtom/tcomment_vim'
 
-  " Show level indentation
-  Plug 'nathanaelkane/vim-indent-guides'
+" Show level indentation
+Plug 'nathanaelkane/vim-indent-guides'
 
-  " Color scheme from wal
-  Plug 'dylanaraps/wal.vim'
-  
-  " Tree-like file explorer
-  Plug 'scrooloose/nerdtree'
-  Plug 'Xuyuanp/nerdtree-git-plugin'
-  
+" Color scheme from wal
+Plug 'dylanaraps/wal.vim'
+
+" Tree-like file explorer
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" File minimap (yeah)
+Plug 'severin-lemaignan/vim-minimap'
+
+" i3config syntax highliting
+Plug 'PotatoesMaster/i3-vim-syntax'
+
 call plug#end()
+
+" Tab == four spaces
+    set tabstop=4 shiftwidth=4 expandtab
 
 " Filetype detection & loading type-specific indentation preferences and
 " plugin. 
-filetype plugin indent on
-
-if v:progname =~? "evim"
-  finish
-endif
+    filetype plugin indent on
 
 " Allow backspacing over everything in insert mode.
-set backspace=indent,eol,start
+    set backspace=indent,eol,start
 
-set history=200		" keep 200 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
+    set history=200        " keep 200 lines of command line history
+    set ruler        " show the cursor position all the time
+    set showcmd        " display incomplete commands
 
-set ttimeout		" time out for key codes
-set ttimeoutlen=100	" wait up to 100ms after Esc for special key
+    set ttimeout        " time out for key codes
+    set ttimeoutlen=100    " wait up to 100ms after Esc for special key
 
 " Show @@@ in the last line if it is truncated.
-set display=truncate
+    set display=truncate
 
 " Show a few lines of context around the cursor.  Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
-set scrolloff=5
+    set scrolloff=5
 
 " Do incremental searching when it's possible to timeout.
-if has('reltime')
-  set incsearch
-endif
+    if has('reltime')
+        set incsearch
+    endif
 
 " Do not recognize octal numbers for Ctrl-A and Ctrl-X, most users find it
 " confusing.
-set nrformats-=octal
+    set nrformats-=octal
 
 " Don't use Ex mode, use Q for formatting.
 " Revert with ":unmap Q".
-map Q gq
+    map Q gq
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 " Revert with ":iunmap <C-U>".
-inoremap <C-U> <C-G>u<C-U>
+    inoremap <C-U> <C-G>u<C-U>
 
 " Turn on mouse controls in supported environments 
-if has('mouse')
-  set mouse=a
-endif
+    if has('mouse')
+        set mouse=a
+    endif
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid, when inside an event handler
 " (happens when dropping a file on gvim) and for a commit message (it's
 " likely a different one than last time).
-autocmd BufReadPost *
-  \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-  \ |   exe "normal! g`\""
-  \ | endif
+    autocmd BufReadPost *
+        \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+        \ |   exe "normal! g`\""
+        \ | endif
 
-if has("vms")
-  set nobackup
-else
-  set backup
-  if has('persistent_undo')
-    set undofile
-  endif
-endif
+    if has("vms")
+        set nobackup
+    else
+          set backup
+        if has('persistent_undo')
+                set undofile
+        endif
+    endif
 
-if &t_Co > 2 || has("gui_running")
-  " Switch on highlighting the last used search pattern.
-  set hlsearch
-endif
+" Switch on highlighting the last used search pattern.
+    if &t_Co > 2 || has("gui_running")
+          set hlsearch
+    endif
 
 " Hit Esc twice in normal mode to disable highlighting last search results 
-nnoremap <esc><esc> :silent! nohls<cr>
+    nnoremap <esc><esc> :silent! nohls<cr>
 
 " Put these in an autocmd group, so that we can delete them easily.
-augroup vimrcEx
-  au!
+    augroup vimrcEx
+        au!
 
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-augroup END
+    " For all text files set 'textwidth' to 78 characters.
+        autocmd FileType text setlocal textwidth=78
+    augroup END
 
 " Add optional packages.
 "
@@ -109,70 +114,71 @@ augroup END
 " compatible.
 " The ! means the package won't be loaded right away but when plugins are
 " loaded during initialization.
-if has('syntax') && has('eval')
-  packadd! matchit
-endif
+    if has('syntax') && has('eval')
+        packadd! matchit
+    endif
 
 " Don't update the display while executing macros
-set lazyredraw
+    set lazyredraw
 
 " Display line numbers
-set number
+    set number
 
 " Enable syntax highlighting
-syntax on
+    syntax on
 
 " Enable enhanced command-line completion
-set wildmenu
+    set wildmenu
 
 " Powerline
-set rtp+=/usr/lib/python3.7/site-packages/powerline/bindings/vim
+    set rtp+=/usr/lib/python3.7/site-packages/powerline/bindings/vim
 
 " Always show the status line
-set laststatus=2
+    set laststatus=2
 
 " Yes.
-set hidden
+    set hidden
 
 " Switch to already opened buffer in another window/tab instead of creating
 " new window (works with :sb/:sbuffer)
-set switchbuf=usetab
+    set switchbuf=usetab
 
 " Shorter shortcuts for split navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+    nnoremap <C-J> <C-W><C-J>
+    nnoremap <C-K> <C-W><C-K>
+    nnoremap <C-L> <C-W><C-L>
+    nnoremap <C-H> <C-W><C-H>
 
 " More natural split direction
-set splitbelow
-set splitright
+    set splitbelow
+    set splitright
 
 " Toggle file explorer
-map <C-n> :NERDTreeToggle<CR>
+    map <C-n> :NERDTreeToggle<CR>
 
 " Bindings for Copy/Paste from/to external programs(gvim-specific feature)
-vnoremap <C-c> "*Y :let @+=@*<CR>
-map <C-p> "+P
+    vnoremap <C-c> "*Y :let @+=@*<CR>
+    map <C-p> "+P
 
 " Change cursor style accordingly to mode
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
+    let &t_SI = "\<Esc>[6 q"
+    let &t_SR = "\<Esc>[4 q"
+    let &t_EI = "\<Esc>[2 q"
 
 " Enable hybrid line numbers
-set rnu
+    set rnu
 
 " Enable absolute line numbers on inactive windows
-:augroup numbertoggle
-:  autocmd!
-:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-:augroup END
+    :augroup numbertoggle
+        :  autocmd!
+        :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+        :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+    :augroup END
 
-colorscheme wal
+" Use generated by pywal colorscheme
+    colorscheme wal
 
 " Set the thinniest indentation guides possible
-let g:indent_guides_guide_size = 1
-let g:indent_guides_color_change_percent = 3
-let g:indent_guides_enable_on_vim_startup = 1
+    let g:indent_guides_guide_size = 1
+    let g:indent_guides_color_change_percent = 3
+    let g:indent_guides_enable_on_vim_startup = 1
