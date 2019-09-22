@@ -106,8 +106,9 @@ source ~/.cache/wal/colors-tty.sh
 # Aliases
 alias reboot='sudo reboot'
 alias wifi-menu='sudo wifi-menu'
-alias v='vim'
-alias sv='sudo vim'
+alias vim='vim -p'
+alias v='vim -p'
+alias sv='sudoedit'
 alias config='vim ~/.config/i3/config'
 alias vconf='vim ~/.vimrc'
 alias vsource='source ~/.vimrc'
