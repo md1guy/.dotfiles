@@ -40,11 +40,24 @@ endif
 " =============================================================================
 " Start of my own stuff
 
+" Yes?
+set nocompatible
+
+" Filetype detection & loading type-specific indentation preferences and
+" plugins
+set filetype indent plugin on
+
+" Don't update the display while executing macros
+set lazyredraw
+
 " Display line numbers
 set number
 
 " Enable syntax highlighting
 syntax on
+
+" Enable enhanced command-line completion
+set wildmenu
 
 " More intuitive split direction than default
 set splitbelow splitright
@@ -54,6 +67,13 @@ set rtp+=/usr/lib/python3.7/site-packages/powerline/bindings/vim
 
 " Always show the status line
 set laststatus=2
+
+" Yes.
+set hidden
+
+" Switch to already opened buffer in another window/tab instead of creating
+" new window (works with :sb/:sbuffer)
+set switchbuf=usetab
 
 " Shorter shortcuts for split navigation
 map <C-h> <C-w>h
