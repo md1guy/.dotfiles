@@ -120,7 +120,7 @@
     noremap <S-k> gt
 
 " Toggle file explorer.
-    noremap <C-n> :NERDTreeToggle<CR>
+    noremap <leader>n :NERDTreeToggle<CR>
 
 " Bindings for Copy/Paste from/to external programs(gvim-specific feature).
 " <C-c> in visual mode to copy selected text.
@@ -132,6 +132,9 @@
 
 " Toggle distraction-free mode (Goyo)
     noremap <leader>f :Goyo<CR>
+
+" Alias replace all to S.
+	nnoremap S :%s//g<Left><Left>
 
 " Open file explorer automatically when vim starts up without files specified
     autocmd StdinReadPre * let s:std_in=1
