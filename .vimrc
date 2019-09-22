@@ -128,7 +128,7 @@
 " <C-p> in normal mode to paste text.
     noremap <C-p> "+P
 " <C-v> in insert mode to paste text.
-    inoremap <C-v> <esc>"+Pi
+    inoremap <C-v> <esc><Right>"+P<Right>i
 
 " Toggle distraction-free mode (Goyo)
     noremap <leader>f :Goyo<CR>
