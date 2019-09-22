@@ -134,7 +134,13 @@
     noremap <leader>f :Goyo<CR>
 
 " Alias replace all to S.
-	nnoremap S :%s//g<Left><Left>
+    nnoremap S :%s//g<Left><Left>
+
+" Write .vimrc with 'wv'
+    nnoremap wv :w ~/.vimrc <CR>
+
+" Source .vimrc with 'sv'
+    nnoremap sv :source ~/.vimrc <CR>
 
 " Open file explorer automatically when vim starts up without files specified
     autocmd StdinReadPre * let s:std_in=1
