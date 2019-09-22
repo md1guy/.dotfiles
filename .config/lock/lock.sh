@@ -8,6 +8,8 @@ W='#A14E61bb'  # wrong
 V='#484BC2bb'  # verifying
 TY='#484BC2bb' # typing
 
+# Automatically set US keyboard layout before locking.
+# Requires 'xkblayout-state-git' AUR package to work
 xkblayout-state set 0;
 
 i3lock \
