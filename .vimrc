@@ -1,10 +1,14 @@
 " Yes?
     set nocompatible
 
+" Unmap default space key behaviour (<right>) and map it as <Leader> key.
+    nnoremap <SPACE> <Nop>
+    let mapleader = " "
+
     call plug#begin('~/.vim/plugged')
 
         Plug 'junegunn/goyo.vim'                    " Distraction-free mode (':Goyo')
-        Plug 'tomtom/tcomment_vim'                  " Toggle line comments(highlight+'gc'; 'gcc' for current line)
+        Plug 'tomtom/tcomment_vim'                  " Toggle line comments('gcc' for current line)
         Plug 'nathanaelkane/vim-indent-guides'      " Show level indentation
         Plug 'dylanaraps/wal.vim'                   " Color scheme from wal
         Plug 'scrooloose/nerdtree'                  " Tree-like file explorer
@@ -13,7 +17,6 @@
         Plug 'PotatoesMaster/i3-vim-syntax'         " i3config syntax highliting
 
     call plug#end()
-
 
     filetype plugin indent on                       " Filetype detection.
     syntax on                                       " Enable syntax highlighting.
@@ -68,9 +71,9 @@
 " is invalid, when inside an event handler (happens when dropping a file on gvim) and for a commit
 " message (it's likely a different one than last time).
     autocmd BufReadPost *
-        \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-        \ |   exe "normal! g`\""
-        \ | endif
+                \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+                \ |   exe "normal! g`\""
+                \ | endif
 
     if has("vms")
         set nobackup
@@ -90,6 +93,9 @@
     let g:indent_guides_guide_size = 1
     let g:indent_guides_color_change_percent = 3
     let g:indent_guides_enable_on_vim_startup = 1
+
+" Set width in Goyo mode.
+    let g:goyo_width = 110
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
@@ -120,3 +126,17 @@
 " <C-v> in insert mode to paste text.
     inoremap <C-v> <esc>"+Pi
 
+" Toggle distraction-free mode (Goyo)
+    noremap <leader>f :Goyo<CR>
+
+" Open file explorer automatically when vim starts up without files specified
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" Open file explorer automatically when vim starts up opening a directory
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in")
+                \ | exe 'NERDTree' argv()[0] 
+                \ | wincmd p 
+                \ | ene 
+                \ | exe 'cd '.argv()[0] 
+                \ | endif
