@@ -42,7 +42,7 @@
     set rnu                                         " Enable hybrid line numbers.
     set hidden                                      " Yes.
 
-" Enable absolute line numbers on inactive windows
+" Enable absolute line numbers on inactive windows.
     :augroup numbertoggle
         :  autocmd!
         :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
@@ -54,7 +54,7 @@
         set incsearch
     endif
 
-" Turn on mouse controls in supported environments 
+" Turn on mouse controls in supported environments.
     if has('mouse')
         set mouse=a
     endif
@@ -81,12 +81,12 @@
         endif
     endif
 
-" Change cursor style accordingly to mode
+" Change cursor style accordingly to mode.
     let &t_SI = "\<Esc>[6 q"
     let &t_SR = "\<Esc>[4 q"
     let &t_EI = "\<Esc>[2 q"
 
-" Set the thinniest indentation guides possible
+" Set the thinniest indentation guides possible.
     let g:indent_guides_guide_size = 1
     let g:indent_guides_color_change_percent = 3
     let g:indent_guides_enable_on_vim_startup = 1
@@ -100,19 +100,23 @@
     nnoremap <C-o> O<Esc>
     nnoremap <CR> o<Esc>
 
-" Hit Esc twice in normal mode to disable highlighting last search results 
+" Hit Esc twice in normal mode to disable highlighting last search results.
     nnoremap <esc><esc> :silent! nohls<cr>
 
-" Shorter shortcuts for split navigation
+" Shorter shortcuts for split navigation.
     nnoremap <C-J> <C-W><C-J>
     nnoremap <C-K> <C-W><C-K>
     nnoremap <C-L> <C-W><C-L>
     nnoremap <C-H> <C-W><C-H>
 
-" Toggle file explorer
+" Toggle file explorer.
     noremap <C-n> :NERDTreeToggle<CR>
 
-" Bindings for Copy/Paste from/to external programs(gvim-specific feature)
+" Bindings for Copy/Paste from/to external programs(gvim-specific feature).
+" <C-c> in visual mode to copy selected text.
     vnoremap <C-c> "*Y :let @+=@*<CR>
+" <C-p> in normal mode to paste text.
     noremap <C-p> "+P
+" <C-v> in insert mode to paste text.
+    inoremap <C-v> <esc>"+Pi
 
