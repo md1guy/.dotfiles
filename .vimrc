@@ -1,31 +1,18 @@
 " Yes?
     set nocompatible
 
-call plug#begin('~/.vim/plugged')
+    call plug#begin('~/.vim/plugged')
 
-" Distraction-free mode (':Goyo')
-Plug 'junegunn/goyo.vim'
+        Plug 'junegunn/goyo.vim'                    " Distraction-free mode (':Goyo')
+        Plug 'tomtom/tcomment_vim'                  " Toggle line comments(highlight+'gc'; 'gcc' for current line)
+        Plug 'nathanaelkane/vim-indent-guides'      " Show level indentation
+        Plug 'dylanaraps/wal.vim'                   " Color scheme from wal
+        Plug 'scrooloose/nerdtree'                  " Tree-like file explorer
+        Plug 'Xuyuanp/nerdtree-git-plugin'          " Git info in file explorer
+        Plug 'severin-lemaignan/vim-minimap'        " File minimap (yeah)
+        Plug 'PotatoesMaster/i3-vim-syntax'         " i3config syntax highliting
 
-" Toggle line comments(highlight+'gc'; 'gcc' for current line)
-Plug 'tomtom/tcomment_vim'
-
-" Show level indentation
-Plug 'nathanaelkane/vim-indent-guides'
-
-" Color scheme from wal
-Plug 'dylanaraps/wal.vim'
-
-" Tree-like file explorer
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-
-" File minimap (yeah)
-Plug 'severin-lemaignan/vim-minimap'
-
-" i3config syntax highliting
-Plug 'PotatoesMaster/i3-vim-syntax'
-
-call plug#end()
+    call plug#end()
 
 " Tab == four spaces
     set tabstop=4 shiftwidth=4 expandtab
