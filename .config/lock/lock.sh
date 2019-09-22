@@ -1,11 +1,14 @@
 #!/bin/sh
 
 B='#00000000'  # blank
-C='#ffffff22'  # clear ish
-D='#ff00ffcc'  # default
-T='#ee00eeee'  # text
-W='#880000bb'  # wrong
-V='#bb00bbbb'  # verifying
+C='#51359177'  # clear ish
+D='#513591bb'  # default
+T='#ffffffff'  # text
+W='#A14E61bb'  # wrong
+V='#484BC2bb'  # verifying
+TY='#484BC2bb' # typing
+
+xkblayout-state set 0;
 
 i3lock \
 --insidevercolor=$C   \
@@ -14,7 +17,7 @@ i3lock \
 --insidewrongcolor=$C \
 --ringwrongcolor=$W   \
 \
---insidecolor=$B      \
+--insidecolor=$C      \
 --ringcolor=$D        \
 --linecolor=$B        \
 --separatorcolor=$D   \
@@ -24,15 +27,16 @@ i3lock \
 --timecolor=$T        \
 --datecolor=$T        \
 --layoutcolor=$T      \
---keyhlcolor=$W       \
+--keyhlcolor=$TY       \
 --bshlcolor=$W        \
 \
 --screen 1            \
---blur 5              \
+--blur 6              \
 --clock               \
 --indicator           \
 --timestr="%H:%M:%S"  \
---datestr="%a, %b %d" \
+--datestr="%A, %d/%m" \
+--radius 100 \
 
 # --veriftext="Drinking verification can..."
 # --wrongtext="Nope!"
