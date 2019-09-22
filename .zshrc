@@ -114,3 +114,10 @@ alias gdf='/usr/bin/git --git-dir=/home/metyslav/.dotfiles/ --work-tree=/home/me
 export TERMINAL=termite
 export BROWSER=chromium
 export EDITOR=vim
+
+# zsh-syntax-highlighting colors from xrdb. 
+# I really believe that there is some more convenient way to do this, but this just works ¯\_(ツ)_/¯
+ZSH_HIGHLIGHT_STYLES[unknown-token]=$(xrdb -query | grep '*color5'| awk '{print $NF}')
+
+# Load zsh-syntax-highlighting; should be last.
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
