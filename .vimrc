@@ -1,38 +1,28 @@
-" Yes? Required by Vundle
+" Yes?
 set nocompatible
-" Required by Vundle
-filetype off
 
-" Set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-  " let Vundle manage Vundle, required
-  Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
   " Distraction-free mode (':Goyo')
-  Plugin 'junegunn/goyo.vim'
+  Plug 'junegunn/goyo.vim'
 
   " Toggle line comments(highlight+'gc'; 'gcc' for current line)
-  Plugin 'tomtom/tcomment_vim'
-
-  " Show git changes over lines (toggle with '<Leader>ig')
-  Plugin 'vim-gitgutter'
+  Plug 'tomtom/tcomment_vim'
 
   " Show level indentation
-  Plugin 'nathanaelkane/vim-indent-guides'
+  Plug 'nathanaelkane/vim-indent-guides'
 
   " Color scheme from wal
-  Plugin 'dylanaraps/wal.vim'
+  Plug 'dylanaraps/wal.vim'
   
   " Tree-like file explorer
-  Plugin 'scrooloose/nerdtree'
-  Plugin 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'scrooloose/nerdtree'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
   
-call vundle#end()
+call plug#end()
 
 " Filetype detection & loading type-specific indentation preferences and
-" plugin. Required by Vundle
+" plugin. 
 filetype plugin indent on
 
 if v:progname =~? "evim"
@@ -134,7 +124,6 @@ syntax on
 
 " Enable enhanced command-line completion
 set wildmenu
-
 
 " Powerline
 set rtp+=/usr/lib/python3.7/site-packages/powerline/bindings/vim
