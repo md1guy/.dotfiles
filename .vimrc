@@ -1,3 +1,6 @@
+" Yes?
+set nocompatible
+
 if v:progname =~? "evim"
   finish
 endif
@@ -18,6 +21,9 @@ if &t_Co > 2 || has("gui_running")
   " Switch on highlighting the last used search pattern.
   set hlsearch
 endif
+
+" Hit Esc twice in normal mode to disable highlighting last search results 
+nnoremap <esc><esc> :silent! nohls<cr>
 
 " Put these in an autocmd group, so that we can delete them easily.
 augroup vimrcEx
@@ -40,12 +46,10 @@ endif
 " =============================================================================
 " Start of my own stuff
 
-" Yes?
-set nocompatible
 
 " Filetype detection & loading type-specific indentation preferences and
 " plugins
-set filetype plugin indent on
+filetype plugin indent on
 
 " Don't update the display while executing macros
 set lazyredraw
@@ -102,8 +106,11 @@ set rnu
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'dylanaraps/wal.vim'
-"Plug 'wincent/terminus'
+  " Color scheme from wal
+  Plug 'dylanaraps/wal.vim'
+  " Tree-like file explorer
+  Plug 'scrooloose/nerdtree'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 
