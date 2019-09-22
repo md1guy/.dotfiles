@@ -135,8 +135,6 @@ syntax on
 " Enable enhanced command-line completion
 set wildmenu
 
-" More intuitive split direction than default
-" set splitbelow splitright
 
 " Powerline
 set rtp+=/usr/lib/python3.7/site-packages/powerline/bindings/vim
@@ -152,10 +150,14 @@ set hidden
 set switchbuf=usetab
 
 " Shorter shortcuts for split navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" More natural split direction
+set splitbelow
+set splitright
 
 " Toggle file explorer
 map <C-n> :NERDTreeToggle<CR>
