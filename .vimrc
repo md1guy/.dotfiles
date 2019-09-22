@@ -45,7 +45,7 @@ set nocompatible
 
 " Filetype detection & loading type-specific indentation preferences and
 " plugins
-set filetype indent plugin on
+set filetype plugin indent on
 
 " Don't update the display while executing macros
 set lazyredraw
