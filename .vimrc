@@ -115,6 +115,10 @@
     nnoremap <C-L> <C-W><C-L>
     nnoremap <C-H> <C-W><C-H>
 
+" More adequate tab navigation.
+    noremap <S-j> gT
+    noremap <S-k> gt
+
 " Toggle file explorer.
     noremap <C-n> :NERDTreeToggle<CR>
 
