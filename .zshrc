@@ -117,7 +117,8 @@ export EDITOR=vim
 
 # zsh-syntax-highlighting colors from xrdb. 
 # I really believe that there is some more convenient way to do this, but this just works ¯\_(ツ)_/¯
-ZSH_HIGHLIGHT_STYLES[unknown-token]=$(xrdb -query | grep '*color5'| awk '{print $NF}')
+typeset -gA ZSH_HIGHLIGHT_STYLE									# reset the type to associative array
+export ZSH_HIGHLIGHT_STYLES[unknown-token]=$(xrdb -query | grep '*color5'| awk '{print $NF}')	# set default strings color
 
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
