@@ -7,14 +7,14 @@
 
     call plug#begin('~/.vim/plugged')
 
-        Plug 'junegunn/goyo.vim'                    " Distraction-free mode (':Goyo')
-        Plug 'tomtom/tcomment_vim'                  " Toggle line comments('gcc' for current line)
-        Plug 'nathanaelkane/vim-indent-guides'      " Show level indentation
-        Plug 'dylanaraps/wal.vim'                   " Color scheme from wal
-        Plug 'scrooloose/nerdtree'                  " Tree-like file explorer
-        Plug 'Xuyuanp/nerdtree-git-plugin'          " Git info in file explorer
-        Plug 'severin-lemaignan/vim-minimap'        " File minimap (yeah)
-        Plug 'PotatoesMaster/i3-vim-syntax'         " i3config syntax highliting
+        Plug 'junegunn/goyo.vim'                    " Distraction-free mode (':Goyo').
+        Plug 'tomtom/tcomment_vim'                  " Toggle line comments('gcc' for current line).
+        Plug 'thaerkh/vim-indentguides'             " Show level of indentation.
+        Plug 'dylanaraps/wal.vim'                   " Color scheme from wal.
+        Plug 'scrooloose/nerdtree'                  " Tree-like file explorer.
+        Plug 'Xuyuanp/nerdtree-git-plugin'          " Git info in file explorer.
+        Plug 'severin-lemaignan/vim-minimap'        " File minimap (yeah).
+        Plug 'PotatoesMaster/i3-vim-syntax'         " i3config syntax highliting.
 
     call plug#end()
 
@@ -90,9 +90,9 @@
     let &t_EI = "\<Esc>[2 q"
 
 " Set the thinniest indentation guides possible.
-    let g:indent_guides_guide_size = 1
-    let g:indent_guides_color_change_percent = 3
-    let g:indent_guides_enable_on_vim_startup = 1
+    " let g:indent_guides_guide_size = 1
+    " let g:indent_guides_color_change_percent = 3
+    " let g:indent_guides_enable_on_vim_startup = 1
 
 " Set width in Goyo mode.
     let g:goyo_width = 110
