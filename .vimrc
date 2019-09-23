@@ -136,8 +136,6 @@
 " Alias replace all to S.
     nnoremap S :%s//g<Left><Left>
 
-" Write .vimrc with 'wv'
-    nnoremap wv :w ~/.vimrc <CR>
 
 " Source .vimrc with 'sv'
     nnoremap sv :source ~/.vimrc <CR>
