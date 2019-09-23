@@ -91,13 +91,14 @@ source ~/.cache/wal/colors-tty.sh
 # Aliases
 alias reboot='sudo reboot'
 alias wifi-menu='sudo wifi-menu'
-alias vim='vim -p'
-alias v='vim -p'
+alias _vim='/usr/bin/vim'
+alias vim='$EDITOR -p'
+alias v='$EDITOR -p'
 alias sv='sudoedit'
-alias config='vim ~/.config/i3/config'
-alias vconf='vim ~/.vimrc'
+alias i3conf='nvim ~/.config/i3/config'
+alias vconf='$EDITOR nvim ~/.vimrc'
 alias vsource='source ~/.vimrc'
-alias zconf='vim ~/.zshrc'
+alias zconf='$EDITOR nvim ~/.zshrc'
 alias zsource='source ~/.zshrc' 
 alias md='mkdir'
 alias shkey='xev | awk -F'\''[ )]+'\'' '\''/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'\'''
@@ -113,12 +114,12 @@ alias gdf='/usr/bin/git --git-dir=/home/metyslav/.dotfiles/ --work-tree=/home/me
 # default apps
 export TERMINAL=termite
 export BROWSER=chromium
-export EDITOR=vim
+export EDITOR=nvim
 
 # zsh-syntax-highlighting colors from xrdb. 
 # I really believe that there is some more convenient way to do this, but this just works ¯\_(ツ)_/¯
-typeset -gA ZSH_HIGHLIGHT_STYLE									# reset the type to associative array
-export ZSH_HIGHLIGHT_STYLES[unknown-token]=$(xrdb -query | grep '*color5'| awk '{print $NF}')	# set default strings color
+# typeset -gA ZSH_HIGHLIGHT_STYLES									# reset the type to associative array
+# export ZSH_HIGHLIGHT_STYLES[unknown-token]=$(xrdb -query | grep '*color5'| awk '{print $NF}')	# set default strings color
 
 # Load zsh-syntax-highlighting; should be last.
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
