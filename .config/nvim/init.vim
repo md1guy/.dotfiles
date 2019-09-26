@@ -51,6 +51,9 @@
     set termguicolors                               " Seems like color scheme bg color finally works.
     set hidden                                      " Yes.
 
+" =================================================================================================
+" =================================================================================================
+
 " Enable absolute line numbers on inactive windows.
     :augroup numbertoggle
         :  autocmd!
@@ -110,7 +113,7 @@
     let g:airline#extensions#tabline#tab_nr_type = 1                " Show tab numbers.
 
 " =================================================================================================
-" ==================================================================================================
+" =================================================================================================
 
 " CTRL-U in insert mode deletes a lot. Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
