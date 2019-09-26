@@ -1,6 +1,6 @@
-" Unmap default space key behaviour (<right>) and map it as <Leader> key.
-    nnoremap <SPACE> <Nop>
-    let mapleader = " "
+" Map comma as <Leader> key.
+    let mapleader = ","
+    let g:mapleader = ","
 
     call plug#begin('~/.config/nvim/plugged')
 
@@ -22,9 +22,7 @@
 
     filetype plugin indent on                       " Filetype detection.
     syntax on                                       " Enable syntax highlighting.
-    let g:onedark_terminal_italics = 1
-    let g:onedark_terminal_bold = 1
-    colorscheme space_vim_theme 
+    colorscheme space_vim_theme                     " Set colorsheme.
 
 " Turn off theme background. Needs to be after colorscheme setting.
     hi Normal guibg=NONE ctermbg=NONE               
@@ -50,8 +48,8 @@
     set rnu                                         " Enable hybrid line numbers.
     set nolist                                      " Remove EOL/Tab visual indicators.
     set clipboard+=unnamedplus                      " Perform all copy-paste operations with system clipboard.
-    set hidden                                      " Yes.
     set termguicolors                               " Seems like color scheme bg color finally works.
+    set hidden                                      " Yes.
 
 " Enable absolute line numbers on inactive windows.
     :augroup numbertoggle
@@ -95,7 +93,11 @@
         endif
     endif
 
-" Set width in Goyo mode.
+" Italic and bold fonts.
+    let g:onedark_terminal_italics = 1
+    let g:onedark_terminal_bold = 1
+
+" Goyo.
     let g:goyo_width = 110
 
 " Airline.
@@ -107,10 +109,33 @@
     let g:airline_theme = 'deus'                                    " Statusline theme.
     let g:airline#extensions#tabline#tab_nr_type = 1                " Show tab numbers.
 
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+" =================================================================================================
+" ==================================================================================================
+
+" CTRL-U in insert mode deletes a lot. Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
-" Revert with ":iunmap <C-U>".
+" Revert with ':iunmap <C-U>'.
     inoremap <C-U> <C-G>u<C-U>
+
+" Disable help button (due to lot of accidental presses on 'f1').
+    noremap <f1> <Nop>
+
+" Usual deletion keys will actually delete things instead of cutting.
+    nnoremap x "_x
+    nnoremap d "_d
+    nnoremap D "_D
+    vnoremap d "_d
+
+" Use <leader> for default behaviour(cutting things).
+    nnoremap <leader>d "+d
+    nnoremap <leader>D "+D
+    vnoremap <leader>d "+d
+
+" <C-v> for pasting in insert mode.
+    inoremap <C-v> <Esc>pi<Right>
+
+" <C-x> for undoing in insert mode (keep in mind that vim's 'undo' is a bit coarse).
+    inoremap <C-x> <Esc>ui
 
 " Insert empty line before('ctrl-o') or after('return') caret without entering insert mode.
     nnoremap <C-o> O<Esc>
