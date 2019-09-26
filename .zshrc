@@ -1,9 +1,6 @@
 export ZSH="/home/metyslav/.oh-my-zsh"
 
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=5000
 setopt appendhistory autocd extendedglob nomatch notify
 # End of generated lines
 
