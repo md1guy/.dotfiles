@@ -51,6 +51,22 @@
     set termguicolors                               " Seems like color scheme bg color finally works.
     set hidden                                      " Yes.
 
+" Italic and bold fonts.
+    let g:onedark_terminal_italics = 1
+    let g:onedark_terminal_bold = 1
+
+" Goyo.
+    let g:goyo_width = 110
+
+" Airline.
+    let g:airline#extensions#tabline#enabled = 1                    " Tabline.
+    let g:airline#extensions#tabline#show_splits = 1                " Show splits ib tabline.
+    let g:airline#extensions#tabline#show_buffers = 0               " Don't show buffers in tabview.
+    let g:airline#extensions#tabline#formatter = 'unique_tail'      " Path in tabs.
+    let g:airline_powerline_fonts = 1                               " Use powerline symbols in statusline.
+    let g:airline_theme = 'deus'                                    " Statusline theme.
+    let g:airline#extensions#tabline#tab_nr_type = 1                " Show tab numbers.
+
 " =================================================================================================
 " =================================================================================================
 
@@ -96,21 +112,9 @@
         endif
     endif
 
-" Italic and bold fonts.
-    let g:onedark_terminal_italics = 1
-    let g:onedark_terminal_bold = 1
-
-" Goyo.
-    let g:goyo_width = 110
-
-" Airline.
-    let g:airline#extensions#tabline#enabled = 1                    " Tabline.
-    let g:airline#extensions#tabline#show_splits = 1                " Show splits ib tabline.
-    let g:airline#extensions#tabline#show_buffers = 0               " Don't show buffers in tabview.
-    let g:airline#extensions#tabline#formatter = 'unique_tail'      " Path in tabs.
-    let g:airline_powerline_fonts = 1                               " Use powerline symbols in statusline.
-    let g:airline_theme = 'deus'                                    " Statusline theme.
-    let g:airline#extensions#tabline#tab_nr_type = 1                " Show tab numbers.
+" Close nvim if only open window is file explorer.
+    autocmd bufenter * if (winnr("$") == 1 && exists("b :NERDTree") && b:NERDTree.isTabTree()) 
+                \ | q | endif
 
 " =================================================================================================
 " =================================================================================================
@@ -168,16 +172,3 @@
 
 " Source nvim config file with 'sv'
     nnoremap sv :source ~/.config/nvim/init.vim <CR>
-
-" Open file explorer automatically when nvim starts up opening a directory
-"     autocmd StdinReadPre * let s:std_in=1
-"     autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in")
-"                 \ | exe 'NERDTree' argv()[0] 
-"                 \ | wincmd p 
-"                 \ | ene 
-"                 \ | exe 'cd '.argv()[0] 
-"                 \ | endif
-
-" Close nvim if only open window is file explorer.
-    autocmd bufenter * if (winnr("$") == 1 && exists("b :NERDTree") && b:NERDTree.isTabTree()) 
-                \ | q | endif
