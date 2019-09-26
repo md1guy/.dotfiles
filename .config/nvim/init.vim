@@ -67,6 +67,7 @@
     let g:airline_theme = 'deus'                                    " Statusline theme.
     let g:airline#extensions#tabline#tab_nr_type = 1                " Show tab numbers.
 
+
 " =================================================================================================
 " =================================================================================================
 
@@ -117,8 +118,10 @@
     autocmd bufenter * if (winnr("$") == 1 && exists("b :NERDTree") && b:NERDTree.isTabTree()) 
                 \ | q | endif
 
+
 " =================================================================================================
 " =================================================================================================
+
 
 " CTRL-U in insert mode deletes a lot. Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
