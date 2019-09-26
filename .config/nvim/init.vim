@@ -70,12 +70,6 @@
 " =================================================================================================
 " =================================================================================================
 
-" Enable absolute line numbers on inactive windows.
-    :augroup numbertoggle
-        :  autocmd!
-        :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-        :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-    :augroup END
 
 " Do incremental searching when it's possible to timeout.
     if has('reltime')
@@ -92,6 +86,22 @@
           set hlsearch
     endif
 
+    if has("vms")
+        set nobackup
+    else
+          set backup
+        if has('persistent_undo')
+                set undofile
+        endif
+    endif
+
+" Enable absolute line numbers on inactive windows.
+    :augroup numbertoggle
+        :  autocmd!
+        :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+        :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+    :augroup END
+
 " Disable autocomment on newline.
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
@@ -102,15 +112,6 @@
                 \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
                 \ |   exe "normal! g`\""
                 \ | endif
-
-    if has("vms")
-        set nobackup
-    else
-          set backup
-        if has('persistent_undo')
-                set undofile
-        endif
-    endif
 
 " Close nvim if only open window is file explorer.
     autocmd bufenter * if (winnr("$") == 1 && exists("b :NERDTree") && b:NERDTree.isTabTree()) 
