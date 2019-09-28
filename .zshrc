@@ -1,10 +1,5 @@
 export ZSH="/home/metyslav/.oh-my-zsh"
 
-# save history into cache directory:
-HISTSIZE=10000
-SAVEHIST=10000
-HISTFILE=~/.cache/zsh/history
-
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
@@ -49,7 +44,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 HIST_STAMPS="dd.mm.yyyy"
 
-plugins=(git archlinux wd)
+plugins=(git archlinux wd zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -73,6 +68,7 @@ alias wifi-menu='sudo wifi-menu'
 alias _vim='/usr/bin/vim'
 alias vim='$EDITOR -p'
 alias v='$EDITOR -p'
+alias vs='vim -S .config/nvim/sessions/default.vim'
 alias sv='sudoedit'
 alias i3conf='$EDITOR ~/.config/i3/config'
 alias vconf='$EDITOR nvim ~/.vimrc'
@@ -82,11 +78,11 @@ alias zsource='source ~/.zshrc'
 alias md='mkdir'
 alias shkey='xev | awk -F'\''[ )]+'\'' '\''/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'\'''
 alias ls='ls -ahF'
-alias rm=' timeout 3 rm -Iv --one-file-system'
 alias hist='history | grep'
 alias cp='cp -i'
 alias mv='mv -i'
 alias c='clear'
 alias cls='echo -ne "\033c"' # clear screen for real
 alias gdf='/usr/bin/git --git-dir=/home/metyslav/.dotfiles/ --work-tree=/home/metyslav'
+alias lf='~/go/bin/lf'
 
