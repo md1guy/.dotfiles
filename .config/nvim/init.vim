@@ -10,13 +10,13 @@
         Plug 'dylanaraps/wal.vim'                   " Color scheme from wal.
         Plug 'scrooloose/nerdtree'                  " Tree-like file explorer.
         Plug 'Xuyuanp/nerdtree-git-plugin'          " Git info in file explorer.
-        Plug 'severin-lemaignan/vim-minimap'        " File minimap (yeah).
         Plug 'PotatoesMaster/i3-vim-syntax'         " i3config syntax highliting.
         Plug 'vim-airline/vim-airline'              " Statusline.
         Plug 'vim-airline/vim-airline-themes'       " Statusline themes.
-        Plug 'mhartington/oceanic-next'  
-        Plug 'liuchengxu/space-vim-theme'
-        Plug 'joshdick/onedark.vim'
+        Plug 'mhartington/oceanic-next'             " Color scheme.
+        Plug 'liuchengxu/space-vim-theme'           " Also colorscheme.
+        Plug 'joshdick/onedark.vim'                 " And one more colorscheme.
+        Plug 'tpope/vim-obsession'                  " Automating session management.
 
     call plug#end()
 
@@ -49,6 +49,7 @@
     set nolist                                      " Remove EOL/Tab visual indicators.
     set clipboard+=unnamedplus                      " Perform all copy-paste operations with system clipboard.
     set termguicolors                               " Seems like color scheme bg color finally works.
+    set title                                       " Proper info in window title.
     set hidden                                      " Yes.
 
 " Italic and bold fonts.
@@ -59,17 +60,19 @@
     let g:goyo_width = 110
 
 " Airline.
-    let g:airline#extensions#tabline#enabled = 1                    " Tabline.
-    let g:airline#extensions#tabline#show_splits = 1                " Show splits ib tabline.
-    let g:airline#extensions#tabline#show_buffers = 0               " Don't show buffers in tabview.
-    let g:airline#extensions#tabline#formatter = 'unique_tail'      " Path in tabs.
-    let g:airline_powerline_fonts = 1                               " Use powerline symbols in statusline.
-    let g:airline_theme = 'deus'                                    " Statusline theme.
-    let g:airline#extensions#tabline#tab_nr_type = 1                " Show tab numbers.
+    let g:airline#extensions#tabline#enabled = 1                            " Tabline.
+    let g:airline#extensions#tabline#show_splits = 1                        " Show splits ib tabline.
+    let g:airline#extensions#tabline#show_buffers = 0                       " Don't show buffers in tabview.
+    let g:airline#extensions#tabline#formatter = 'unique_tail'     " v
+    let g:airline_powerline_fonts = 1                                       " Use powerline symbols in statusline.
+    let g:airline_theme = 'deus'                                            " Statusline theme.
+    let g:airline#extensions#tabline#tab_nr_type = 1                        " Show tab numbers.
 
 
-" =================================================================================================
-" =================================================================================================
+" =====================================================================================================================
+" =====================================================================================================================
+" =====================================================================================================================
+" =====================================================================================================================
 
 
 " Do incremental searching when it's possible to timeout.
@@ -119,8 +122,10 @@
                 \ | q | endif
 
 
-" =================================================================================================
-" =================================================================================================
+" =====================================================================================================================
+" =====================================================================================================================
+" =====================================================================================================================
+" =====================================================================================================================
 
 
 " CTRL-U in insert mode deletes a lot. Use CTRL-G u to first break undo,
