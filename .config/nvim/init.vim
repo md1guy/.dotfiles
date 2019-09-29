@@ -50,6 +50,7 @@
     set clipboard+=unnamedplus                      " Perform all copy-paste operations with system clipboard.
     set termguicolors                               " Seems like color scheme bg color finally works.
     set title                                       " Proper info in window title.
+    set pastetoggle=<F2>                            " Plain paste from buffer, w/o indenting.
     set hidden                                      " Yes.
 
 " Italic and bold fonts.
