@@ -46,6 +46,7 @@ exec --no-startup-id chromium --disk-cache-dir=/tmp/cache                       
 exec --no-startup-id telegram-desktop                                               # telegram
 exec --no-startup-id code                                                           # vscode
 exec --no-startup-id flameshot                                                      # screenshot tool
+# exec termite -e "vim -S .config/nvim/sessions/default.vim"                          # vim
 
 # apps' shortcuts    
 bindsym $mod+Return exec i3-sensible-terminal                                       # terminal
