@@ -44,7 +44,6 @@ exec_always --no-startup-id zsh ~/.config/polybar/launch.sh                     
 exec_always --no-startup-id compton --config ~/.config/compton/compton.conf -b      # compositor
 exec --no-startup-id chromium --disk-cache-dir=/tmp/cache                           # chromium
 exec --no-startup-id telegram-desktop                                               # telegram
-exec --no-startup-id code                                                           # vscode
 exec --no-startup-id flameshot                                                      # screenshot tool
 # exec termite -e "vim -S .config/nvim/sessions/default.vim"                          # vim
 
