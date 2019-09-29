@@ -44,7 +44,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 HIST_STAMPS="dd.mm.yyyy"
 
-plugins=(git archlinux wd zsh-autosuggestions)
+plugins=(git archlinux wd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,4 +85,4 @@ alias c='clear'
 alias cls='echo -ne "\033c"' # clear screen for real
 alias gdf='/usr/bin/git --git-dir=/home/metyslav/.dotfiles/ --work-tree=/home/metyslav'
 alias lf='~/go/bin/lf'
-
+alias vpn='sudo protonvpn-cli'
