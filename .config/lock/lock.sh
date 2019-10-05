@@ -37,7 +37,7 @@ i3lock \
 	--clock               \
 	--indicator           \
 	--timestr="%H:%M"  \
-	--datestr="%A, %d/%m" \
+	--datestr="%A, %b %d" \
 	--radius 100 \
 
 # --veriftext="Drinking verification can..."
