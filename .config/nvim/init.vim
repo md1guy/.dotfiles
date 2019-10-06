@@ -52,6 +52,8 @@
     set title                                       " Proper info in window title.
     set pastetoggle=<F2>                            " Plain paste from buffer, w/o indenting.
     set hidden                                      " Yes.
+    set nobackup                                    " Turn off backups.
+    set noundofile                                  " Turn off recover files.
 
 " Italic and bold fonts.
     let g:onedark_terminal_italics = 1
