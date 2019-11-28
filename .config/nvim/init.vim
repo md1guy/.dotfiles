@@ -17,16 +17,17 @@
         Plug 'liuchengxu/space-vim-theme'           " Also colorscheme.
         Plug 'joshdick/onedark.vim'                 " And one more colorscheme.
         Plug 'tpope/vim-obsession'                  " Automating session management.
+        Plug 'gosukiwi/vim-atom-dark'
+        Plug 'kyoz/purify', { 'rtp': 'vim' }
+        Plug 'gruvbox-community/gruvbox'
+        Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
     call plug#end()
 
     filetype plugin indent on                       " Filetype detection.
     syntax on                                       " Enable syntax highlighting.
-    colorscheme space_vim_theme                     " Set colorsheme.
-
-" Turn off theme background. Needs to be after colorscheme setting.
-    hi Normal guibg=NONE ctermbg=NONE               
-
+    colorscheme onehalfdark                         " Set colorsheme.
+    
     set nocompatible                                " Yes?
     set backspace=indent,eol,start                  " Allow backspacing over everything in insert mode.
     set history=200                                 " Keep 200 lines of command line history.
@@ -54,12 +55,14 @@
     set hidden                                      " Yes.
     set nobackup                                    " Turn off backups.
     set noundofile                                  " Turn off recover files.
+    set bg=dark
 
-" Italic and bold fonts.
-    let g:onedark_terminal_italics = 1
-    let g:onedark_terminal_bold = 1
+" Comments' style.
+    hi Comment gui=italic
+" Comments' color.
+    hi Comment guifg=DarkGray
 
-" Goyo.
+    " Goyo.
     let g:goyo_width = 110
 
 " Airline.
