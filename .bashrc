@@ -8,6 +8,3 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-# Set powerline-patched font for tty
-setfont /usr/share/kbd/consolefonts/ter-powerline-v16b.psf.gz
-
