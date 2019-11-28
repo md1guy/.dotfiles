@@ -52,11 +52,11 @@ source $ZSH/oh-my-zsh.sh
 
 # Import colorscheme from 'wal' asynchronously
 # ( ) # Hide shell job control messages.
-(cat ~/.cache/wal/sequences &)
+# (cat ~/.cache/wal/sequences &)
 
 # default apps
 export TERMINAL=termite
-export BROWSER=chromium
+export BROWSER=firefox-developer-edition
 export EDITOR=nvim
 
 # Aliases
@@ -80,6 +80,5 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias c='clear'
 alias cls='echo -ne "\033c"' # clear screen for real
-alias gdf='/usr/bin/git --git-dir=/home/metyslav/.dotfiles/ --work-tree=/home/metyslav'
+alias gdf='/usr/bin/git --git-dir=/home/metyslav/.cfg/ --work-tree=/home/metyslav'
 alias lf='~/go/bin/lf'
-alias vpn='sudo protonvpn-cli'
