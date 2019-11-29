@@ -80,5 +80,5 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias c='clear'
 alias cls='echo -ne "\033c"' # clear screen for real
-alias gdf='/usr/bin/git --git-dir=/home/metyslav/.cfg/ --work-tree=/home/metyslav'
+alias gdf='/usr/bin/git --git-dir=/home/metyslav/.dotfiles/ --work-tree=/home/metyslav'
 alias lf='~/go/bin/lf'
